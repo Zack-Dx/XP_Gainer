@@ -1,17 +1,32 @@
 import { HoverEffectCard } from "@/components/ui/card-hover-effect";
-import { courses } from "@/constants/courses";
 import { words } from "@/constants/words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import GradientButton from "@/components/ui/gradient-button";
+import fs from "fs/promises";
 
-export default function Home() {
+export default async function Home() {
+  const courses = await fetchData();
+
   return (
     <>
-      <div className="h-96 flex flex-col items-center justify-center space-y-6">
+      <section className="h-96 flex flex-col items-center justify-center space-y-6">
         <TypewriterEffectSmooth words={words} />
         <GradientButton textContent={"Explore"} />
-      </div>
-      <HoverEffectCard items={courses} />
+      </section>
+
+      <main>
+        <HoverEffectCard items={courses} />
+      </main>
     </>
   );
+}
+
+async function fetchData() {
+  try {
+    const filePath = "./src/data/courses.json";
+    const data = await fs.readFile(filePath, "utf-8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.log(error);
+  }
 }

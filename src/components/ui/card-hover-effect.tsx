@@ -35,7 +35,7 @@ export const HoverEffectCard = ({
         className
       )}
     >
-      {items.map((item, idx) => (
+      {items?.map((item, idx) => (
         <div
           key={idx}
           className="relative group  block p-2 h-full w-full"
