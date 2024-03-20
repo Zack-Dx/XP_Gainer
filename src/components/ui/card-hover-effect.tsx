@@ -5,6 +5,7 @@ import { useState } from "react";
 import GradientButton from "./gradient-button";
 import { AnimatedTooltip } from "./animated-tooltip";
 import { Item, InstructorsCategory } from "@/interfaces";
+import Link from "next/link";
 
 export const HoverEffectCard = ({
   items,

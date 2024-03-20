@@ -1,6 +1,7 @@
 export interface Instructor {
   id: number;
   name: string;
+  identifier:string;
   designation: string;
   image: string;
 }
