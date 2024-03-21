@@ -3,6 +3,8 @@ import { fetchVideos } from "@/utils/helpers";
 import { useEffect, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { Video } from "@/interfaces";
+import { VideoPlayer } from "@/components/ui/video-player";
+import { ProgressBar } from "@/components/ui/progress-bar";
 
 interface PageProps {
   params: {
@@ -37,12 +39,17 @@ const Page = ({ params }: PageProps) => {
 
   return (
     <div>
+      <div className="p-4 flex justify-evenly items-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500">
+        <h3 className="text-base mr-6 font-semibold">Playlist Progress:</h3>
+        <ProgressBar progress={50} />
+      </div>
       <main className="grid grid-cols-12">
-        <section className="col-span-12 md:col-span-7">Video Section</section>
-        <section className="col-span-12 md:col-span-5">
-          <div className="p-4 rounded-md bg-gradient-to-r from-pink-500 to-purple-500">
-            <h3 className="text-base font-semibold">Playlist Progress</h3>
+        <section className="col-span-12 md:col-span-7">
+          <div>
+            <VideoPlayer />
           </div>
+        </section>
+        <section className="col-span-12 md:col-span-5">
           <div className="h-[550px]">
             {videos.map(({ name }, idx) => {
               return (
