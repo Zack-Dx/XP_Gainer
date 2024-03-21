@@ -1,9 +1,12 @@
 export interface Instructor {
   id: number;
   name: string;
-  identifier:string;
+  identifier: string;
   designation: string;
   image: string;
+  playlist: {
+    name: string;
+  }[];
 }
 
 export interface Item {
@@ -14,9 +17,12 @@ export interface Item {
   instructors: Instructor[];
 }
 
-
 export interface InstructorsCategory {
   web: boolean;
   ai: boolean;
   blockchain: boolean;
-};
+}
+
+export interface Video {
+  name: string;
+}

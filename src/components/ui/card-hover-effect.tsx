@@ -82,7 +82,7 @@ export const HoverEffectCard = ({
             {showInstructorsCategory[
               item.identifier as keyof typeof showInstructorsCategory
             ] ? (
-              <div className="flex flex-wrap justify-center gap-6 mt-5">
+              <div className="flex flex-wrap justify-center gap-8 mt-5">
                 <AnimatedTooltip items={item.instructors} />
               </div>
             ) : null}
