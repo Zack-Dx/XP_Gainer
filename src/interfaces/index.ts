@@ -26,3 +26,9 @@ export interface InstructorsCategory {
 export interface Video {
   name: string;
 }
+
+export interface VideoPlayerProps {
+  src: string;
+  activeVideoStatus: boolean;
+  resetVideo: boolean;
+}
