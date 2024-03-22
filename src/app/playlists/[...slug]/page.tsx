@@ -91,7 +91,7 @@ const Page = ({ params }: PageProps) => {
         </div>
       </div>
 
-      <main className="grid grid-cols-12">
+      <main className="grid grid-cols-12 h-screen">
         <section className="col-span-12 md:col-span-7">
           <div className="relative">
             <VideoPlayer
@@ -107,7 +107,7 @@ const Page = ({ params }: PageProps) => {
               return (
                 <div
                   key={idx}
-                  className="p-5 border-b-[0.5px] border-gray-700 transition-all cursor-pointer flex items-center bg-black hover:bg-slate-900 font-semibold text-base rounded-md"
+                  className="p-5 border-b-[0.5px] border-gray-700 transition-all cursor-pointer flex items-center hover:bg-pink-100 dark:bg-black dark:hover:bg-slate-900 font-semibold text-base rounded-md"
                 >
                   <div className="mr-2">
                     {progress < 100 ? (
