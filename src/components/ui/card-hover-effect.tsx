@@ -61,7 +61,7 @@ export const HoverEffectCard = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
+            <CardTitle>{item.name}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
             <div className="flex justify-center mt-10">
               <GradientButton

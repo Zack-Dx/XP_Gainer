@@ -24,12 +24,3 @@ export const fetchVideos = async (
     console.log(error);
   }
 };
-
-export const fetchData = async () => {
-  try {
-    // Dummy calls
-    return courses;
-  } catch (error) {
-    console.log(error);
-  }
-};

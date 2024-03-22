@@ -8,14 +8,13 @@ export interface Instructor {
     name: string;
   }[];
 }
-
 export interface Item {
-  title: string;
+  name: string;
   identifier: string;
   description: string;
-  link: string;
   instructors: Instructor[];
 }
+[];
 
 export interface InstructorsCategory {
   web: boolean;
