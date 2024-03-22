@@ -20,7 +20,10 @@ const Page = ({ params }: PageProps) => {
   const [completedVideos, setCompletedVideos] = useState<string[]>([]);
   const [resetVideo, setResetVideo] = useState<boolean>(false);
   const [celebrate, setCelebrate] = useState(false);
-  const progress = (completedVideos.length / videos.length) * 100 || 0;
+
+  const progress = videos.length
+    ? (completedVideos.length / videos.length) * 100
+    : 0;
 
   let [course, instructor] = params.slug;
   course = decodeURIComponent(course);
