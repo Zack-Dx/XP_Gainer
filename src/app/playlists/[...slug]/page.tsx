@@ -77,7 +77,7 @@ const Page = ({ params }: PageProps) => {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       {celebrate && <Confetti />}
       <div className="p-4 flex flex-col md:flex-row md:justify-between items-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500">
         <h1 className="text-base font-semibold text-white mb-4 md:mb-0 md:mr-6">
@@ -91,7 +91,7 @@ const Page = ({ params }: PageProps) => {
         </div>
       </div>
 
-      <main className="grid grid-cols-12 h-screen">
+      <main className="grid grid-cols-12">
         <section className="col-span-12 md:col-span-7">
           <div className="relative">
             <VideoPlayer
