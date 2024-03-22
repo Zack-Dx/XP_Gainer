@@ -1,5 +1,6 @@
 "use server";
 import fs from "fs/promises";
+import path from "path";
 import { Instructor } from "@/interfaces";
 
 export const fetchVideos = async (
@@ -7,7 +8,7 @@ export const fetchVideos = async (
   courseIdentifier: string
 ) => {
   try {
-    const filePath = "./src/data/courses.json";
+    const filePath = path.join(process.cwd(), "src/data/courses.json");
     const data = await fs.readFile(filePath, "utf-8");
     const parsedData = JSON.parse(data);
     const course = parsedData.filter((course: any) => {
@@ -31,7 +32,8 @@ export const fetchVideos = async (
 
 export const fetchData = async () => {
   try {
-    const filePath = "./src/data/courses.json";
+    const filePath = path.join(process.cwd(), "src/data/courses.json");
+    console.log(filePath);
     const data = await fs.readFile(filePath, "utf-8");
     return JSON.parse(data);
   } catch (error) {
