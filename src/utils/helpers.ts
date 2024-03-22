@@ -1,6 +1,5 @@
 "use server";
 import fs from "fs/promises";
-import path from "path";
 import { Instructor } from "@/interfaces";
 
 export const fetchVideos = async (
@@ -9,7 +8,7 @@ export const fetchVideos = async (
 ) => {
   try {
     const data = await fs.readFile(
-      process.cwd() + "/src/data/courses.json",
+      process.cwd() + "/app/data/courses.json",
       "utf8"
     );
     const parsedData = JSON.parse(data);
@@ -35,7 +34,7 @@ export const fetchVideos = async (
 export const fetchData = async () => {
   try {
     const data = await fs.readFile(
-      process.cwd() + "/src/data/courses.json",
+      process.cwd() + "/app/data/courses.json",
       "utf8"
     );
     return JSON.parse(data);
