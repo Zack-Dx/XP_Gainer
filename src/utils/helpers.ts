@@ -1,5 +1,4 @@
-"use server";
-import fs from "fs/promises";
+import { courses } from "@/constants/courses";
 import { Instructor } from "@/interfaces";
 
 export const fetchVideos = async (
@@ -7,12 +6,7 @@ export const fetchVideos = async (
   courseIdentifier: string
 ) => {
   try {
-    const data = await fs.readFile(
-      process.cwd() + "/app/data/courses.json",
-      "utf8"
-    );
-    const parsedData = JSON.parse(data);
-    const course = parsedData.filter((course: any) => {
+    const course = courses.filter((course: any) => {
       if (course.identifier === courseIdentifier) {
         return true;
       }
@@ -33,11 +27,8 @@ export const fetchVideos = async (
 
 export const fetchData = async () => {
   try {
-    const data = await fs.readFile(
-      process.cwd() + "/app/data/courses.json",
-      "utf8"
-    );
-    return JSON.parse(data);
+    // Dummy calls
+    return courses;
   } catch (error) {
     console.log(error);
   }
